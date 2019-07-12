@@ -23,4 +23,13 @@ public class LoginTest extends BasePage {
         webDriver.get(PropertyAccesor.getInstance().getURL());
     }
 
+    @Test
+    public void userLogin() {
+
+        Login login = PageFactory.initElements(webDriver,Login.class);
+        login.setUser(PropertyAccesor.getInstance().getUsername());
+        login.setPassword(PropertyAccesor.getInstance().getPasssword());
+        login.clickLoging();
+    }
+
 }
